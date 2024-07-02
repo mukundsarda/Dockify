@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Path to your Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - webserver
+
+  webserver:
+    image: nginx:latest
+# You should have an Nginx config file
+
